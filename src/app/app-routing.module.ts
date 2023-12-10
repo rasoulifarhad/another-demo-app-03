@@ -31,9 +31,10 @@ const appRoutes: Routes = [
     appRoutes,
     {
       enableTracing: true,
-      preloadingStrategy: PreloadAllModules
-      // preloadingStrategy: SelectivePreloadingStrategyService
+      // preloadingStrategy: PreloadAllModules
+      preloadingStrategy: SelectivePreloadingStrategyService
     })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ SelectivePreloadingStrategyService]
 })
 export class AppRoutingModule { }
