@@ -11,9 +11,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 
 import { AppRoutingModule } from './app-routing.module';
 import { HeroesModule } from './heroes/heroes.module';
-import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
-import { AdminModule } from './admin/admin.module';
 import { AuthModule } from "./auth/auth.module";
 
 @NgModule({
@@ -29,8 +27,6 @@ import { AuthModule } from "./auth/auth.module";
         BrowserAnimationsModule,
         FormsModule,
         HeroesModule,
-        CrisisCenterModule,
-        AdminModule,
         AuthModule,
         AppRoutingModule,
     ]

@@ -16,10 +16,18 @@ import { AuthService } from "./auth.service";
 // };
 
 @Injectable()
-export class AuthGuard implements CanActivate, CanActivateChild {
+export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
 
   constructor(private authService: AuthService, private router: Router) {}
+
+  canLoad(
+      route: Route,
+      segments: UrlSegment[]): boolean{
+
+    const url = `/${route.path}`;
+    return this.checkLogin(url);
+  }
 
   canActivate(
       route: ActivatedRouteSnapshot,
