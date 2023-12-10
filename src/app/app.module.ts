@@ -31,4 +31,12 @@ import { AuthModule } from "./auth/auth.module";
         AppRoutingModule,
     ]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private router: Router) {
+
+    const replacer = (key: any, value: any) => (typeof value === 'function') ? value.name : value;
+
+    console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
+  }
+}
